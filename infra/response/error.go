@@ -13,7 +13,17 @@ var (
 )
 
 var (
-	// auth
+
+	//product
+	ErrProductNameRequired = errors.New("product name required")
+	ErrProductNameInvalid  = errors.New("product name must have at least 4 character")
+	ErrSrockInvalid        = errors.New("Stock must be greater than 0")
+	ErrPriceInvalid        = errors.New("price must be greater than 0")
+	// ErrProductRequired = errors.New("product name is required")
+	// ErrProductInvalid  = errors.New("product must have name minimun 4 character")
+	// ErrStockInvalid    = errors.New("stock must be greater than 0")
+	// ErrPriceInvalid    = errors.New("price must be greater than 0")
+	// user
 	ErrEmailRequired         = errors.New("email is required")
 	ErrEmailInvalid          = errors.New("email is invalid")
 	ErrPasswordRequired      = errors.New("password is required")
