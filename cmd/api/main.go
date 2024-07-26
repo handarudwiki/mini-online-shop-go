@@ -2,6 +2,7 @@ package main
 
 import (
 	"handarudwiki/mini-online-shop-go/apps/product"
+	"handarudwiki/mini-online-shop-go/apps/transaction"
 	"handarudwiki/mini-online-shop-go/apps/user"
 	"handarudwiki/mini-online-shop-go/external/database"
 	"handarudwiki/mini-online-shop-go/internal/config"
@@ -33,5 +34,7 @@ func main() {
 
 	user.Init(router, db)
 	product.Init(router, db)
+	transaction.Init(router, db)
+
 	router.Listen(config.Cfg.App.Port)
 }

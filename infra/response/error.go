@@ -17,7 +17,7 @@ var (
 	//product
 	ErrProductNameRequired = errors.New("product name required")
 	ErrProductNameInvalid  = errors.New("product name must have at least 4 character")
-	ErrSrockInvalid        = errors.New("Stock must be greater than 0")
+	ErrSrockInvalid        = errors.New("stock must be greater than 0")
 	ErrPriceInvalid        = errors.New("price must be greater than 0")
 	// ErrProductRequired = errors.New("product name is required")
 	// ErrProductInvalid  = errors.New("product must have name minimun 4 character")
@@ -31,6 +31,10 @@ var (
 	ErrUserNotExist          = errors.New("user does not exist")
 	ErrEmailAlreadyUsed      = errors.New("email already used")
 	ErrPasswordNotMatch      = errors.New("password does not match")
+
+	//transaction
+	ErrAmountGreaterThanStock = errors.New("amount greater than stock")
+	ErrAmountInvalid          = errors.New("amount must greater than 0")
 )
 
 type Error struct {

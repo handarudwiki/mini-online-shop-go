@@ -1,6 +1,9 @@
 package product
 
 import (
+	"handarudwiki/mini-online-shop-go/apps/user"
+	infrafiber "handarudwiki/mini-online-shop-go/infra/fiber"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/jmoiron/sqlx"
 )
@@ -14,5 +17,5 @@ func Init(router fiber.Router, db *sqlx.DB) {
 
 	productRoute.Get("", handler.GetDetailProduct)
 	productRoute.Get("/sku/:sku", handler.GetDetailProduct)
-	productRoute.Post("", handler.CreateProduct)
+	productRoute.Post("", infrafiber.CheckAuth(), infrafiber.CheckRoles([]string{string(user.ROLE_ADMIN)}), handler.CreateProduct)
 }
